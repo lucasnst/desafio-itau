@@ -1,6 +1,5 @@
 package com.desafioitau.api.transferencia.exception;
 
-import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,9 +11,9 @@ import com.desafioitau.api.transferencia.dto.TransferenciaResponseDTO;
 @RestControllerAdvice
 public class GlobalControllerExceptionHandler {
 
-    @ExceptionHandler(ConversionFailedException.class)
+    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<String> handleConversion(RuntimeException ex) {
+    public ResponseEntity<String> geralException(RuntimeException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
     

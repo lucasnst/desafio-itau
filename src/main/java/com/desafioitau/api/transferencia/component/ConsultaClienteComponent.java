@@ -7,12 +7,12 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import com.desafioitau.api.transferencia.dto.ClienteResponseDTO;
+import com.desafioitau.api.transferencia.enumaration.TransferenciaEnumaration;
 import com.desafioitau.api.transferencia.exception.TransferenciaException;
 
 import io.micrometer.observation.annotation.Observed;
 
 @Component
-@Observed
 public class ConsultaClienteComponent {
 
 	@Autowired
@@ -21,7 +21,7 @@ public class ConsultaClienteComponent {
 	public void consultaCliente(String idCliente) throws TransferenciaException {
 
 		try {
-			webClient.get().uri("http://wiremock:8080/clientes/{idCliente}", idCliente).retrieve()
+			webClient.get().uri(TransferenciaEnumaration.BASE_URL.getId() + "/clientes/{idCliente}", idCliente).retrieve()
 					.bodyToMono(ClienteResponseDTO.class).block();
 		} catch (WebClientResponseException e) {
 

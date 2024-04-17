@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.desafioitau.api.transferencia.dto.ContaResponseDTO;
+import com.desafioitau.api.transferencia.enumaration.TransferenciaEnumaration;
 import com.desafioitau.api.transferencia.exception.TransferenciaException;
 import com.desafioitau.api.transferencia.service.BacenService;
 
@@ -22,7 +23,7 @@ public class ContasComponent {
 		
 		
 		log.info("method=consultaContaAtiva, step=starting, idConta={}, origem={}, valor={}", idConta, origem, valor);
-		ContaResponseDTO contaResponseDTO = webClient.get().uri("http://wiremock:8080/contas/{idConta}", idConta)
+		ContaResponseDTO contaResponseDTO = webClient.get().uri(TransferenciaEnumaration.BASE_URL.getId() + "/contas/{idConta}", idConta)
 				.retrieve().bodyToMono(ContaResponseDTO.class).block();
 		
 		log.info("method=consultaContaAtiva, step=finished, idConta={}, origem={}, valor={}", idConta, origem, valor, contaResponseDTO);
