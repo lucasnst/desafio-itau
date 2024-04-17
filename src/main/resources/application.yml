@@ -1,0 +1,21 @@
+spring:
+  application.name: desafio-itau
+
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+  level: 
+    zipkin2: INFO
+
+management:
+  endpoints:
+    enable-by-default: false
+    web:
+      exposure:
+        include: 'health,prometheus'
+  endpoint:
+    health:
+      enabled: true
+      show-datails: always
+    prometheus:
+      enabled: true

@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "api-transferencia-job"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["host.docker.internal:8080"]
+        labels:
+          application: "api-transferencia-spring"
+#     scrape_interval: 5s
+#     static_configs:
+#       - targets: ['localhost:9191'] #Servidor prometheus
+#   - job_name: 'spring-monitoring-demo'
+#     scrape_interval: 5s
+#     metrics_path: '/actuator/prometheus'
+#     static_configs:
+#       - targets: ['localhost:8080'] #Servidor da minha aplicação
