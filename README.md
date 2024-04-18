@@ -125,3 +125,20 @@ http://localhost:8080/transferencia
             {
                 "id_transferencia": "410bb5b0-429f-46b1-8621-b7da101b1e28"
             }
+
+
+  ## Monitoramento (Grafana)
+
+  http://localhost:3000/
+  
+  ```bash
+login: admin
+senha: admin
+```
+  
+![App Screenshot](grafana1.PNG)
+
+
+## Autores
+
+- [@lucasnst](https://github.com/lucasnst)
