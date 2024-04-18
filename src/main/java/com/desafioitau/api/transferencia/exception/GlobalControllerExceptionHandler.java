@@ -8,14 +8,16 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.desafioitau.api.transferencia.dto.TransferenciaResponseDTO;
 
+import io.github.resilience4j.ratelimiter.RequestNotPermitted;
+
 @RestControllerAdvice
 public class GlobalControllerExceptionHandler {
 
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<String> geralException(RuntimeException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+//    @ExceptionHandler(Exception.class)
+//    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+//    public ResponseEntity<String> geralException(RuntimeException ex) {
+//        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+//    }
     
     @ExceptionHandler(TransferenciaException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
@@ -23,5 +25,10 @@ public class GlobalControllerExceptionHandler {
     	TransferenciaResponseDTO transferenciaResponseDTO = new TransferenciaResponseDTO();
     	transferenciaResponseDTO.setMessage(ex.getMessage());
         return new ResponseEntity<>(transferenciaResponseDTO, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
+    
+    @ExceptionHandler({ RequestNotPermitted.class })
+    @ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
+    public void handleRequestNotPermitted() {
     }
 }

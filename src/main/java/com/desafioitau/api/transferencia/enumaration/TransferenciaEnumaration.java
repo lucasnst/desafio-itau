@@ -2,7 +2,7 @@ package com.desafioitau.api.transferencia.enumaration;
 
 public enum TransferenciaEnumaration {
 
-	BASE_URL("http://wiremock:8080");
+	BASE_URL("http://localhost:9191");
 
 	private final String id;
 

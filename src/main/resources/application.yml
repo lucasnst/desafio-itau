@@ -19,3 +19,9 @@ management:
       show-datails: always
     prometheus:
       enabled: true
+# resilience4j.ratelimiter:
+#   instances:
+#     limits:
+#       limitForPeriod: 1 
+#       limitFreshPeriod: 1s
+#       timeoutDuration: 2s

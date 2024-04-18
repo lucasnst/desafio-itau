@@ -15,6 +15,8 @@ import com.desafioitau.api.transferencia.dto.TransferenciaResponseDTO;
 import com.desafioitau.api.transferencia.service.BacenService;
 import com.desafioitau.api.transferencia.service.TransferenciaService;
 
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+
 @RestController
 public class TransferenciaController {
 
@@ -28,6 +30,7 @@ public class TransferenciaController {
 	private TransferenciaToNotificacoesComponent transferenciaToNotificacoesComponent;
 
 	@PostMapping("/transferencia")
+	@RateLimiter(name = "rateLimiterApi")
 	public ResponseEntity<TransferenciaResponseDTO> efetuarTransferencia(
 			@RequestBody TransferenciaRequestDTO transferenciaRequestDTO) throws Throwable {
 		TransferenciaResponseDTO transferenciaResponseDTO = new TransferenciaResponseDTO();
