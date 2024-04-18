@@ -21,9 +21,9 @@ docker-compose up --build -d
 
 ## GET Mock Client
 
-  http://localhost:9090/clientes/bcdd1048-a501-4608-bc82-66d7b4db3600
+  http://localhost:9191/clientes/bcdd1048-a501-4608-bc82-66d7b4db3600
   
-  http://localhost:9090/clientes/2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f
+  http://localhost:9191/clientes/2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f
 
   + Response 200 (application/json)
 
@@ -41,9 +41,9 @@ docker-compose up --build -d
 
 ## GET Mock Contas
 
-  http://localhost:9090/contas/d0d32142-74b7-4aca-9c68-838aeacef96b
+  http://localhost:9191/contas/d0d32142-74b7-4aca-9c68-838aeacef96b
   
-  http://localhost:9090/contas/41313d7b-bd75-4c75-9dea-1f4be434007f
+  http://localhost:9191/contas/41313d7b-bd75-4c75-9dea-1f4be434007f
 
   + Response 200 (application/json)
 
@@ -61,7 +61,7 @@ docker-compose up --build -d
 
 ## PUT Mock Contas - Atualiza Saldo
 
-  http://localhost:9090/contas/saldos
+  http://localhost:9191/contas/saldos
 
   + Request (application/json)
 
@@ -82,7 +82,7 @@ docker-compose up --build -d
 
 ## POST Mock Bacen
 
-  http://localhost:9090/notificacoes
+  http://localhost:9191/notificacoes
 
   + Request (application/json)
 
