@@ -7,8 +7,8 @@ Instruções detalhadas para desenvolvimento local, testes e deploy utilizando D
 Clone o repositório do projeto para sua máquina local usando o Git:
 
 ```bash
-git clone https://github.com/mllcarvalho/DesafioItau.git
-cd DesafioItau
+git clone https://github.com/lucasnst/desafio-itau.git
+cd desafio-itau
 ```
 
 ## Passo 2: Construção dos Containers com Docker Compose
