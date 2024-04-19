@@ -24,7 +24,7 @@ public class ConsultaClienteComponentTest {
 
 	@Test
 
-	public void callValidateArqc() throws TransferenciaException, JsonProcessingException {
+	public void consultaClienteTest() throws TransferenciaException, JsonProcessingException {
 
 		ClienteResponseDTO clienteResponseDTO = new ClienteResponseDTO();
 		WebClient.RequestHeadersUriSpec requestHeaderUriSpec = Mockito.mock(WebClient.RequestHeadersUriSpec.class);
