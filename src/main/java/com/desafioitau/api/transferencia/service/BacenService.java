@@ -26,7 +26,7 @@ public class BacenService {
 
 		try {
 			webClient.post().uri(TransferenciaEnumaration.BASE_URL.getId() + "/notificacoes").bodyValue(notificacaoRequestDTO).retrieve()
-					.bodyToMono(String.class).retryWhen(Retry.max(3)).timeout(Duration.ofSeconds(1)).block();
+					.bodyToMono(String.class).timeout(Duration.ofSeconds(2)).retryWhen(Retry.max(3)).block();
 
 		} catch (Throwable e) {
 

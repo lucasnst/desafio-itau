@@ -1,6 +1,10 @@
-# Desenvolvimento e Deploy
+## Arquitetura da API
 
-Instruções detalhadas para desenvolvimento local, testes e deploy utilizando Docker e Docker Compose.
+  ![App Screenshots](src/main/images/arquitetura.jpg)
+
+# Deploy
+
+Deploy utilizando Docker e Docker Compose.
 
 ## Passo 1: Preparação do Ambiente
 
@@ -134,10 +138,70 @@ http://localhost:8080/transferencia
   ```bash
 login: admin
 senha: admin
+(Não é necessario trocar a senha - Clicar em Skip)
 ```
   
-![App Screenshot](grafana1.PNG)
+![App Screenshot](src/main/images/grafana1.PNG)
 
+ ```bash
+No menu lateral vá até a aba "Data sources"
+```
+
+![App Screenshot](src/main/images/grafana2.PNG)
+
+ ```bash
+Adicione um novo Data source, no nosso caso o Prometheus
+```
+
+![App Screenshot](src/main/images/grafana3.PNG)
+
+ ```bash
+Na barra de pesquisa procure por "Import Dashboards"
+```
+
+![App Screenshot](src/main/images/grafana4.PNG)
+
+ ```bash
+A comunidade oferece diversos dashboards para o grafana, mas recomendamos o 14430 (próprio para spring boot), clique em LOAD e novamente no LOAD abaixo
+```
+
+![App Screenshot](src/main/images/grafana5.PNG)
+
+ ```bash
+Note que nosso dashboard ainda não tem nenhum dado, portando vamos clicar em "Dashboards settings" (como destaado na imagem) para configura-lo
+```
+
+![App Screenshot](src/main/images/grafana6.PNG)
+
+ ```bash
+Vá até a aba "Variables"
+```
+
+![App Screenshot](src/main/images/grafana7.PNG)
+
+ ```bash
+Iremos alterar as variaveis "instance" e "application"
+```
+
+![App Screenshot](src/main/images/grafana8.PNG)
+
+ ```bash
+Deixa a varivel "instance" com a aba "Label filters" como no destaque em vermelho
+```
+
+![App Screenshot](src/main/images/grafana9.PNG)
+
+ ```bash
+Deixa a varivel "application" com a aba "Label" como no destaque em vermelho e apague a aba "metrics" e "Label filters" como no destaque em azul
+```
+
+![App Screenshot](src/main/images/grafana10.PNG)
+
+ ```bash
+Volte até a aba do seu Dashboard e ele está pronto para uso
+```
+
+![App Screenshot](src/main/images/grafana11.PNG)
 
 ## Autores
 
